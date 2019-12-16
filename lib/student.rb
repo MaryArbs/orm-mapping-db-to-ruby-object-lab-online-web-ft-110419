@@ -1,8 +1,15 @@
 class Student
+<<<<<<< HEAD
 
   attr_accessor :id, :name, :grade
 
 
+=======
+
+  attr_accessor :id, :name, :grade
+
+
+>>>>>>> ba4d5963c2253e0ba6058e0afffba1828089b304
   def save
       sql = <<-SQL
         INSERT INTO students (name, grade)
@@ -12,7 +19,11 @@ class Student
       DB[:conn].execute(sql, self.name, self.grade)
   end
 
+<<<<<<< HEAD
   def self.create_table # creates a student table
+=======
+  def self.create_table
+>>>>>>> ba4d5963c2253e0ba6058e0afffba1828089b304
     sql = <<-SQL
     CREATE TABLE IF NOT EXISTS students (
       id INTEGER PRIMARY KEY,
@@ -29,6 +40,7 @@ class Student
     DB[:conn].execute(sql)
   end
 
+<<<<<<< HEAD
   def self.new_from_db(row) #creates an instance with corresponding attribute values
    student = self.new
    student.id = row[0]
@@ -114,4 +126,14 @@ class Student
         self.new_from_db(row)
       end
    end
+=======
+  def self.new_from_db
+    student = self.new
+   student.id = row[0]
+   student.name = row[1]
+   student.grade = row[2]
+   studen
+  end 
+
+>>>>>>> ba4d5963c2253e0ba6058e0afffba1828089b304
 end
